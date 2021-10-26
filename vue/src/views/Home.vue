@@ -19,9 +19,6 @@
         :pagination="true"
         :scrollbar="true"
       
-        :pager="true"
-        :options="options"
-
         @ionSlideWillChange="slideWillChange"
         @ionSlideDidChange="slideDidChange"
 
@@ -69,9 +66,6 @@ export default defineComponent({
   },
   setup() {
     const slidesRef = ref();
-    const options = {
-      keyboard: true
-    }
     const slideWillChange = () => {
       console.log('Slide will change');
     }
@@ -91,7 +85,6 @@ export default defineComponent({
       slideWillChange,
       slideDidChange,
       slidesRef,
-      options,
       modules: [Keyboard, Pagination, Scrollbar, IonicSwiper]
     }
   }
