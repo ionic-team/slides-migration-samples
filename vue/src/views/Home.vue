@@ -45,6 +45,9 @@ import {
 } from '@ionic/vue';
 import { defineComponent, ref } from 'vue';
 
+import 'swiper/css';
+import '@ionic/vue/css/ionic-swiper.css';
+
 export default defineComponent({
   name: 'Home',
   components: {
