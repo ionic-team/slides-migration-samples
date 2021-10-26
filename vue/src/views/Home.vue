@@ -21,8 +21,7 @@
       
         @slideChangeTransitionStart="slideWillChange"
         @slideChangeTransitionEnd="slideDidChange"
-
-        ref="slidesRef"
+        @swiper="swiperInit"
       >
         <swiper-slide>Slide 1</swiper-slide>
         <swiper-slide>Slide 2</swiper-slide>
@@ -66,25 +65,30 @@ export default defineComponent({
   },
   setup() {
     const slidesRef = ref();
+
+    const swiperInit = (swiper: any) => {
+      slidesRef.value = swiper;
+    }
+
     const slideWillChange = () => {
       console.log('Slide will change');
     }
     
-    const slideDidChange = async () => {
+    const slideDidChange = () => {
       console.log('Slide did change');
       
       if (!slidesRef.value) return;
 
       console.table({
-        isBeginning: await slidesRef.value.$el.isBeginning(),
-        isEnd: await slidesRef.value.$el.isEnd()
+        isBeginning: slidesRef.value.isBeginning,
+        isEnd: slidesRef.value.isEnd
       });
     }
     
     return {
       slideWillChange,
       slideDidChange,
-      slidesRef,
+      swiperInit,
       modules: [Keyboard, Pagination, Scrollbar, IonicSwiper]
     }
   }
