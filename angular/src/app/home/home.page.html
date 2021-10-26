@@ -13,7 +13,7 @@
     </ion-toolbar>
   </ion-header>
 
-  <ion-slides
+  <swiper
     [pager]="true"
     [scrollbar]="true"
     [options]="options"
@@ -23,10 +23,10 @@
 
     #slidesRef
   >
-    <ion-slide>Slide 1</ion-slide>
-    <ion-slide>Slide 2</ion-slide>
-    <ion-slide>Slide 3</ion-slide>
-    <ion-slide>Slide 4</ion-slide>
-    <ion-slide>Slide 5</ion-slide>
-  </ion-slides>
+    <ng-template swiperSlide>Slide 1</ng-template>
+    <ng-template swiperSlide>Slide 2</ng-template>
+    <ng-template swiperSlide>Slide 3</ng-template>
+    <ng-template swiperSlide>Slide 4</ng-template>
+    <ng-template swiperSlide>Slide 5</ng-template>
+  </swiper>
 </ion-content>
