@@ -13,17 +13,37 @@
         </ion-toolbar>
       </ion-header>
     
-      <div id="container">
-        <strong>Ready to create an app?</strong>
-        <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-      </div>
+      <ion-slides
+        :pager="true"
+        :scrollbar="true"
+        :options="options"
+        
+        @ionSlideWillChange="slideWillChange"
+        @ionSlideDidChange="slideDidChange"
+        
+        ref="slidesRef"
+      >
+        <ion-slide>Slide 1</ion-slide>
+        <ion-slide>Slide 2</ion-slide>
+        <ion-slide>Slide 3</ion-slide>
+        <ion-slide>Slide 4</ion-slide>
+        <ion-slide>Slide 5</ion-slide>
+      </ion-slides>
     </ion-content>
   </ion-page>
 </template>
 
 <script lang="ts">
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
-import { defineComponent } from 'vue';
+import {
+  IonContent, 
+  IonHeader, 
+  IonPage, 
+  IonTitle, 
+  IonToolbar,
+  IonSlides,
+  IonSlide
+} from '@ionic/vue';
+import { defineComponent, ref } from 'vue';
 
 export default defineComponent({
   name: 'Home',
@@ -32,37 +52,46 @@ export default defineComponent({
     IonHeader,
     IonPage,
     IonTitle,
-    IonToolbar
+    IonToolbar,
+    IonSlides,
+    IonSlide
+  },
+  setup() {
+    const slidesRef = ref();
+    const options = {
+      keyboard: true
+    }
+    const slideWillChange = () => {
+      console.log('Slide will change');
+    }
+    
+    const slideDidChange = async () => {
+      console.log('Slide did change');
+      
+      if (!slidesRef.value) return;
+
+      console.table({
+        isBeginning: await slidesRef.value.$el.isBeginning(),
+        isEnd: await slidesRef.value.$el.isEnd()
+      });
+    }
+    
+    return {
+      slideWillChange,
+      slideDidChange,
+      slidesRef,
+      options
+    }
   }
 });
 </script>
 
 <style scoped>
-#container {
-  text-align: center;
-  
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
-}
-
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-  
-  color: #8c8c8c;
-  
-  margin: 0;
-}
-
-#container a {
-  text-decoration: none;
-}
+  ion-slides {
+    height: 300px;
+    
+    --bullet-background: rgb(var(--ion-color-primary-rgb), 0.5);
+    --bullet-background-active: var(--ion-color-primary);
+    --scroll-bar-background: var(--ion-color-light);
+  }
 </style>
