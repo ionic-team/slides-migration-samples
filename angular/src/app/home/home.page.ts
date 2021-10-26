@@ -1,9 +1,9 @@
 import { Component, ViewChild } from '@angular/core';
-import { IonSlides } from '@ionic/angular';
+import { IonSlides, IonicSwiper } from '@ionic/angular';
 
 import SwiperCore, { Keyboard, Pagination, Scrollbar } from 'swiper';
 
-SwiperCore.use([Keyboard, Pagination, Scrollbar]);
+SwiperCore.use([Keyboard, Pagination, Scrollbar, IonicSwiper]);
 
 @Component({
   selector: 'app-home',
