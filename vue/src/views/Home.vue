@@ -19,8 +19,8 @@
         :pagination="true"
         :scrollbar="true"
       
-        @ionSlideWillChange="slideWillChange"
-        @ionSlideDidChange="slideDidChange"
+        @slideChangeTransitionStart="slideWillChange"
+        @slideChangeTransitionEnd="slideDidChange"
 
         ref="slidesRef"
       >
