@@ -1,0 +1,32 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Blank
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Blank</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-slides
+    [pager]="true"
+    [scrollbar]="true"
+    [options]="options"
+
+    (ionSlideWillChange)="slideWillChange()"
+    (ionSlideDidChange)="slideDidChange()"
+
+    #slidesRef
+  >
+    <ion-slide>Slide 1</ion-slide>
+    <ion-slide>Slide 2</ion-slide>
+    <ion-slide>Slide 3</ion-slide>
+    <ion-slide>Slide 4</ion-slide>
+    <ion-slide>Slide 5</ion-slide>
+  </ion-slides>
+</ion-content>
