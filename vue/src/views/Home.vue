@@ -14,13 +14,17 @@
       </ion-header>
     
       <swiper
-        :pager="true"
+        :modules="modules"
+        :keyboard="true"
+        :pagination="true"
         :scrollbar="true"
+      
+        :pager="true"
         :options="options"
-        
+
         @ionSlideWillChange="slideWillChange"
         @ionSlideDidChange="slideDidChange"
-        
+
         ref="slidesRef"
       >
         <swiper-slide>Slide 1</swiper-slide>
@@ -43,8 +47,12 @@ import {
 } from '@ionic/vue';
 import { defineComponent, ref } from 'vue';
 import { Swiper, SwiperSlide } from 'swiper/vue';
+import { Keyboard, Pagination, Scrollbar } from 'swiper';
 
 import 'swiper/css';
+import 'swiper/css/keyboard';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
 import '@ionic/vue/css/ionic-swiper.css';
 
 export default defineComponent({
@@ -82,7 +90,8 @@ export default defineComponent({
       slideWillChange,
       slideDidChange,
       slidesRef,
-      options
+      options,
+      modules: [Keyboard, Pagination, Scrollbar]
     }
   }
 });
