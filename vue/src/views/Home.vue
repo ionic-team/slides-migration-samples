@@ -43,7 +43,8 @@ import {
   IonHeader, 
   IonPage, 
   IonTitle, 
-  IonToolbar
+  IonToolbar,
+  IonicSwiper
 } from '@ionic/vue';
 import { defineComponent, ref } from 'vue';
 import { Swiper, SwiperSlide } from 'swiper/vue';
@@ -91,7 +92,7 @@ export default defineComponent({
       slideDidChange,
       slidesRef,
       options,
-      modules: [Keyboard, Pagination, Scrollbar]
+      modules: [Keyboard, Pagination, Scrollbar, IonicSwiper]
     }
   }
 });
