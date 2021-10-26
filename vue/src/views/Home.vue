@@ -90,7 +90,7 @@ export default defineComponent({
 </script>
 
 <style scoped>
-  ion-slides {
+  .swiper {
     height: 300px;
     
     --bullet-background: rgb(var(--ion-color-primary-rgb), 0.5);
