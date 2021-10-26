@@ -1,0 +1,7 @@
+ion-slides {
+  height: 300px;
+
+  --bullet-background: rgb(var(--ion-color-primary-rgb), 0.5);
+  --bullet-background-active: var(--ion-color-primary);
+  --scroll-bar-background: var(--ion-color-light);
+}
