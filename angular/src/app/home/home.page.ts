@@ -1,6 +1,10 @@
 import { Component, ViewChild } from '@angular/core';
 import { IonSlides } from '@ionic/angular';
 
+import SwiperCore, { Keyboard, Pagination, Scrollbar } from 'swiper';
+
+SwiperCore.use([Keyboard, Pagination, Scrollbar]);
+
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',

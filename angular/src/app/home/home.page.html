@@ -14,8 +14,11 @@
   </ion-header>
 
   <swiper
-    [pager]="true"
+    [keyboard]="true"
+    [pagination]="true"
     [scrollbar]="true"
+
+    [pager]="true"
     [options]="options"
 
     (ionSlideWillChange)="slideWillChange()"
