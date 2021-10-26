@@ -13,7 +13,7 @@
         </ion-toolbar>
       </ion-header>
     
-      <ion-slides
+      <swiper
         :pager="true"
         :scrollbar="true"
         :options="options"
@@ -23,12 +23,12 @@
         
         ref="slidesRef"
       >
-        <ion-slide>Slide 1</ion-slide>
-        <ion-slide>Slide 2</ion-slide>
-        <ion-slide>Slide 3</ion-slide>
-        <ion-slide>Slide 4</ion-slide>
-        <ion-slide>Slide 5</ion-slide>
-      </ion-slides>
+        <swiper-slide>Slide 1</swiper-slide>
+        <swiper-slide>Slide 2</swiper-slide>
+        <swiper-slide>Slide 3</swiper-slide>
+        <swiper-slide>Slide 4</swiper-slide>
+        <swiper-slide>Slide 5</swiper-slide>
+      </swiper>
     </ion-content>
   </ion-page>
 </template>
@@ -39,11 +39,10 @@ import {
   IonHeader, 
   IonPage, 
   IonTitle, 
-  IonToolbar,
-  IonSlides,
-  IonSlide
+  IonToolbar
 } from '@ionic/vue';
 import { defineComponent, ref } from 'vue';
+import { Swiper, SwiperSlide } from 'swiper/vue';
 
 import 'swiper/css';
 import '@ionic/vue/css/ionic-swiper.css';
@@ -56,8 +55,8 @@ export default defineComponent({
     IonPage,
     IonTitle,
     IonToolbar,
-    IonSlides,
-    IonSlide
+    Swiper,
+    SwiperSlide
   },
   setup() {
     const slidesRef = ref();
