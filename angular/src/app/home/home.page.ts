@@ -13,10 +13,6 @@ SwiperCore.use([Keyboard, Pagination, Scrollbar, IonicSwiper]);
 export class HomePage {
   @ViewChild('slidesRef', { static: true }) slidesRef: IonSlides;
 
-  public options = {
-    keyboard: true
-  }
-
   constructor() {}
 
   public slideWillChange() {
