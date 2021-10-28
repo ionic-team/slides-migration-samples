@@ -3,10 +3,9 @@ import {
   IonHeader, 
   IonPage, 
   IonTitle, 
-  IonToolbar,
-  IonSlides,
-  IonSlide
+  IonToolbar
 } from '@ionic/react';
+import { Swiper, SwiperSlide } from 'swiper/react/swiper-react.js';
 import { useRef } from 'react';
 import './Home.css';
 
@@ -49,7 +48,7 @@ const Home: React.FC = () => {
           </IonToolbar>         
         </IonHeader>
         
-        <IonSlides
+        <Swiper
           pager={true}
           scrollbar={true}
           options={options}
@@ -59,12 +58,12 @@ const Home: React.FC = () => {
           
           ref={slidesRef}
         >
-          <IonSlide>Slide 1</IonSlide>
-          <IonSlide>Slide 2</IonSlide>
-          <IonSlide>Slide 3</IonSlide>
-          <IonSlide>Slide 4</IonSlide>
-          <IonSlide>Slide 5</IonSlide>
-        </IonSlides>
+          <SwiperSlide>Slide 1</SwiperSlide>
+          <SwiperSlide>Slide 2</SwiperSlide>
+          <SwiperSlide>Slide 3</SwiperSlide>
+          <SwiperSlide>Slide 4</SwiperSlide>
+          <SwiperSlide>Slide 5</SwiperSlide>
+        </Swiper>
       </IonContent>
     </IonPage>
   );
