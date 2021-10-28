@@ -58,9 +58,6 @@ const Home: React.FC = () => {
           keyboard={true}
           pagination={true}
           scrollbar={true}
-
-          pager={true}
-          options={options}
           
           onIonSlideWillChange={() => slideWillChange()}
           onIonSlideDidChange={() => slideDidChange()}
