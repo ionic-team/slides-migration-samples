@@ -6,10 +6,14 @@ import {
   IonToolbar
 } from '@ionic/react';
 import { Swiper, SwiperSlide } from 'swiper/react/swiper-react.js';
+import { Keyboard, Pagination, Scrollbar } from 'swiper';
 import { useRef } from 'react';
 import './Home.css';
 
 import 'swiper/swiper.min.css';
+import 'swiper/modules/keyboard/keyboard.min.css';
+import 'swiper/modules/pagination/pagination.min.css';
+import 'swiper/modules/scrollbar/scrollbar.min.css';
 import '@ionic/react/css/ionic-swiper.css';
 
 const Home: React.FC = () => {
@@ -49,8 +53,12 @@ const Home: React.FC = () => {
         </IonHeader>
         
         <Swiper
-          pager={true}
+          modules={[Keyboard, Pagination, Scrollbar]}
+          keyboard={true}
+          pagination={true}
           scrollbar={true}
+
+          pager={true}
           options={options}
           
           onIonSlideWillChange={() => slideWillChange()}
