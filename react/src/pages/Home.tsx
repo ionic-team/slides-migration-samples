@@ -10,6 +10,9 @@ import {
 import { useRef } from 'react';
 import './Home.css';
 
+import 'swiper/swiper.min.css';
+import '@ionic/react/css/ionic-swiper.css';
+
 const Home: React.FC = () => {
   const slidesRef = useRef<HTMLIonSlidesElement>(null);
 
