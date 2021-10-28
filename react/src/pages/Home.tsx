@@ -7,8 +7,8 @@ import {
   IonicSwiper
 } from '@ionic/react';
 import { Swiper, SwiperSlide } from 'swiper/react/swiper-react.js';
-import { Keyboard, Pagination, Scrollbar } from 'swiper';
-import { useRef } from 'react';
+import { Keyboard, Pagination, Scrollbar, Swiper as SwiperInterface } from 'swiper';
+import { useState } from 'react';
 import './Home.css';
 
 import 'swiper/swiper.min.css';
@@ -18,7 +18,7 @@ import 'swiper/modules/scrollbar/scrollbar.min.css';
 import '@ionic/react/css/ionic-swiper.css';
 
 const Home: React.FC = () => {
-  const slidesRef = useRef<HTMLIonSlidesElement>(null);
+  const [slidesRef, setSlidesRef] = useState<SwiperInterface>();
 
   const options = {
     keyboard: true
@@ -28,14 +28,14 @@ const Home: React.FC = () => {
     console.log('Slide will change');
   }
   
-  const slideDidChange = async () => {
+  const slideDidChange = () => {
     console.log('Slide did change');
     
-    if (!slidesRef.current) return;
+    if (!slidesRef) return;
     
     console.table({
-      isBeginning: await slidesRef.current.isBeginning(),
-      isEnd: await slidesRef.current.isEnd()
+      isBeginning: slidesRef.isBeginning,
+      isEnd: slidesRef.isEnd
     });
   }
 
@@ -61,8 +61,7 @@ const Home: React.FC = () => {
           
           onSlideChangeTransitionStart={() => slideWillChange()}
           onSlideChangeTransitionEnd={() => slideDidChange()}
-          
-          ref={slidesRef}
+          onSwiper={(swiper) => setSlidesRef(swiper)}
         >
           <SwiperSlide>Slide 1</SwiperSlide>
           <SwiperSlide>Slide 2</SwiperSlide>
