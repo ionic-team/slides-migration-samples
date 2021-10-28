@@ -59,8 +59,8 @@ const Home: React.FC = () => {
           pagination={true}
           scrollbar={true}
           
-          onIonSlideWillChange={() => slideWillChange()}
-          onIonSlideDidChange={() => slideDidChange()}
+          onSlideChangeTransitionStart={() => slideWillChange()}
+          onSlideChangeTransitionEnd={() => slideDidChange()}
           
           ref={slidesRef}
         >
