@@ -4,7 +4,7 @@ import {
   IonPage, 
   IonTitle, 
   IonToolbar,
-  IonicSwiper
+  IonicSlides
 } from '@ionic/react';
 import { Swiper, SwiperSlide } from 'swiper/react/swiper-react.js';
 import { Keyboard, Pagination, Scrollbar, Swiper as SwiperInterface } from 'swiper';
@@ -54,7 +54,7 @@ const Home: React.FC = () => {
         </IonHeader>
         
         <Swiper
-          modules={[Keyboard, Pagination, Scrollbar, IonicSwiper]}
+          modules={[Keyboard, Pagination, Scrollbar, IonicSlides]}
           keyboard={true}
           pagination={true}
           scrollbar={true}
