@@ -1,9 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { IonicSlides } from '@ionic/angular';
-
-import SwiperCore, { Keyboard, Pagination, Scrollbar } from 'swiper';
-
-SwiperCore.use([Keyboard, Pagination, Scrollbar, IonicSlides]);
 
 @Component({
   selector: 'app-home',
@@ -11,12 +7,18 @@ SwiperCore.use([Keyboard, Pagination, Scrollbar, IonicSlides]);
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-  private slidesRef: any;
+  private swiperInstance: any;
+  public swiperModules = [IonicSlides];
 
-  constructor() {}
-
-  public swiperInit(swiper: any) {
-    this.slidesRef = swiper;
+  @ViewChild('swiper')
+  set swiper(swiperRef: ElementRef) {
+    /**
+     * This setTimeout waits for Ionic's async initialization to complete.
+     * Otherwise, an outdated swiper reference will be used.
+     */
+    setTimeout(() => {
+      this.swiperInstance = swiperRef.nativeElement.swiper;
+    }, 0);
   }
 
   public slideWillChange() {
@@ -26,11 +28,11 @@ export class HomePage {
   public slideDidChange() {
     console.log('Slide did change');
 
-    if (!this.slidesRef) return;
+    if (!this.swiperInstance) return;
 
     console.table({
-      isBeginning: this.slidesRef.isBeginning,
-      isEnd: this.slidesRef.isEnd
+      isBeginning: this.swiperInstance.isBeginning,
+      isEnd: this.swiperInstance.isEnd
     });
   }
 

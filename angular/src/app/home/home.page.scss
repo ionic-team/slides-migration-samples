@@ -1,7 +1,7 @@
-.swiper {
+swiper-container {
   height: 300px;
 
-  --bullet-background: rgb(var(--ion-color-primary-rgb), 0.5);
-  --bullet-background-active: var(--ion-color-primary);
-  --scroll-bar-background: var(--ion-color-light);
+  --swiper-pagination-bullet-inactive-color: rgb(var(--ion-color-primary-rgb), 0.5);
+  --swiper-pagination-color: var(--ion-color-primary);
+  --swiper-scrollbar-bg-color: var(--ion-color-light);
 }
