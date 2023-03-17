@@ -15,10 +15,10 @@
     "@capacitor/core": "3.2.5",
     "@capacitor/haptics": "1.1.2",
     "@capacitor/keyboard": "1.1.2",
-    "@ionic/vue": "^6.1.1",
-    "@ionic/vue-router": "^6.1.1",
+    "@ionic/vue": "^6.6.2",
+    "@ionic/vue-router": "^6.6.2",
     "core-js": "^3.6.5",
-    "swiper": "^7.1.0",
+    "swiper": "^9.1.1",
     "vue": "^3.2.1",
     "vue-router": "^4.0.0-0"
   },

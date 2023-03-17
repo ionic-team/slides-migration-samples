@@ -13,19 +13,21 @@
     </ion-toolbar>
   </ion-header>
 
-  <swiper
+  <swiper-container
+    #swiper
+    
     [keyboard]="true"
     [pagination]="true"
     [scrollbar]="true"
+    [modules]="swiperModules"
 
-    (slideChangeTransitionStart)="slideWillChange()"
-    (slideChangeTransitionEnd)="slideDidChange()"
-    (swiper)="swiperInit($event)"
+    (slidechangetransitionstart)="slideWillChange()"
+    (slidechangetransitionend)="slideDidChange()"
   >
-    <ng-template swiperSlide>Slide 1</ng-template>
-    <ng-template swiperSlide>Slide 2</ng-template>
-    <ng-template swiperSlide>Slide 3</ng-template>
-    <ng-template swiperSlide>Slide 4</ng-template>
-    <ng-template swiperSlide>Slide 5</ng-template>
-  </swiper>
+    <swiper-slide>Slide 1</swiper-slide>
+    <swiper-slide>Slide 2</swiper-slide>
+    <swiper-slide>Slide 3</swiper-slide>
+    <swiper-slide>Slide 4</swiper-slide>
+    <swiper-slide>Slide 5</swiper-slide>
+  </swiper-container>
 </ion-content>
