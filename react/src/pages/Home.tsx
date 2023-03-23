@@ -6,24 +6,20 @@ import {
   IonToolbar,
   IonicSlides
 } from '@ionic/react';
-import { Swiper, SwiperSlide } from 'swiper/react/swiper-react.js';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import { Keyboard, Pagination, Scrollbar, Swiper as SwiperInterface } from 'swiper';
 import { useState } from 'react';
 import './Home.css';
 
 import 'swiper/swiper.min.css';
-import 'swiper/modules/keyboard/keyboard.min.css';
-import 'swiper/modules/pagination/pagination.min.css';
-import 'swiper/modules/scrollbar/scrollbar.min.css';
+import 'swiper/css/keyboard';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
 import '@ionic/react/css/ionic-swiper.css';
 
 const Home: React.FC = () => {
   const [slidesRef, setSlidesRef] = useState<SwiperInterface>();
 
-  const options = {
-    keyboard: true
-  };
-  
   const slideWillChange = () => {
     console.log('Slide will change');
   }
