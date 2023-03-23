@@ -53,7 +53,6 @@ import 'swiper/css/scrollbar';
 import '@ionic/vue/css/ionic-swiper.css';
 
 export default defineComponent({
-  name: 'Home',
   components: {
     IonContent,
     IonHeader,
