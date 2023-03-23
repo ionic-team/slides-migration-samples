@@ -11,7 +11,7 @@ import { Keyboard, Pagination, Scrollbar, Swiper as SwiperInterface } from 'swip
 import { useState } from 'react';
 import './Home.css';
 
-import 'swiper/swiper.min.css';
+import 'swiper/css';
 import 'swiper/css/keyboard';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
